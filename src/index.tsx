@@ -1,7 +1,8 @@
 import { NativeModules } from 'react-native';
 
 type NotificationBadgeType = {
-  multiply(a: number, b: number): Promise<number>;
+  setNumber(number: number): void;
+  configure(title: string, text: string): void;
 };
 
 const { NotificationBadge } = NativeModules;

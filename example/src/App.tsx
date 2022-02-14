@@ -1,18 +1,27 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import NotificationBadge from 'react-native-notification-badge';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
   React.useEffect(() => {
-    NotificationBadge.multiply(3, 7).then(setResult);
+    NotificationBadge.configure('Titel', 'There are %count% new messages');
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TouchableOpacity
+        onPress={() => NotificationBadge.setNumber(8)}
+        style={styles.button}
+      >
+        <Text>Set 8</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => NotificationBadge.setNumber(0)}
+        style={[styles.marginTop, styles.button]}
+      >
+        <Text>Set 0</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -23,9 +32,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  button: {
+    backgroundColor: '#0275d8',
+    padding: 5,
+    borderRadius: 5,
+  },
+  marginTop: {
+    marginTop: 20,
   },
 });
