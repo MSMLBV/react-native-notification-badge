@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import NotificationBadge from 'react-native-notification-badge';
 

@@ -17,6 +17,8 @@
 		2DCD954D1E0B4F2C00145EB5 /* NotificationBadgeExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NotificationBadgeExampleTests.m */; };
 		4C39C56BAD484C67AA576FFA /* libPods-NotificationBadgeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E69C5B9553B26FBA2DF04 /* libPods-NotificationBadgeExample.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9590A1FE27BA8E0300196398 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590A1FD27BA8E0300196398 /* File.swift */; };
+		9590A1FF27BA8E0400196398 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590A1FD27BA8E0300196398 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		2D02E4901E0B4A5D006451C7 /* NotificationBadgeExample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NotificationBadgeExample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F7ED3B7971BE374F7B8635 /* Pods-NotificationBadgeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationBadgeExample.debug.xcconfig"; path = "Target Support Files/Pods-NotificationBadgeExample/Pods-NotificationBadgeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NotificationBadgeExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9590A1FB27BA8E0300196398 /* NotificationBadgeExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationBadgeExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		9590A1FC27BA8E0300196398 /* NotificationBadgeExampleTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationBadgeExampleTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		9590A1FD27BA8E0300196398 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		CA3E69C5B9553B26FBA2DF04 /* libPods-NotificationBadgeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotificationBadgeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00ACF0FDA8BF921659E2F9A /* Pods-NotificationBadgeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationBadgeExample.release.xcconfig"; path = "Target Support Files/Pods-NotificationBadgeExample/Pods-NotificationBadgeExample.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -117,6 +122,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9590A1FD27BA8E0300196398 /* File.swift */,
+				9590A1FB27BA8E0300196398 /* NotificationBadgeExample-Bridging-Header.h */,
+				9590A1FC27BA8E0300196398 /* NotificationBadgeExampleTests-Bridging-Header.h */,
 			);
 			name = NotificationBadgeExample;
 			sourceTree = "<group>";
@@ -137,7 +145,6 @@
 				47F7ED3B7971BE374F7B8635 /* Pods-NotificationBadgeExample.debug.xcconfig */,
 				E00ACF0FDA8BF921659E2F9A /* Pods-NotificationBadgeExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -263,10 +270,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 1320;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1320;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -449,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* NotificationBadgeExampleTests.m in Sources */,
+				9590A1FF27BA8E0400196398 /* File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				9590A1FE27BA8E0300196398 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +507,9 @@
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -512,6 +524,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.reactnativenotificationbadge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationBadgeExampleTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationBadgeExample.app/NotificationBadgeExample";
 			};
 			name = Debug;
@@ -519,7 +534,9 @@
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = NotificationBadgeExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -531,6 +548,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.reactnativenotificationbadge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationBadgeExampleTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationBadgeExample.app/NotificationBadgeExample";
 			};
 			name = Release;
@@ -545,6 +564,34 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = NotificationBadgeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBReactNativeSpec\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCTTypeSafety\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-CoreModules\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-notification-badge\"",
+					/usr/lib/swift,
+					"\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n\"$(SDKROOT)/usr/lib/swift\"\n\n",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -552,6 +599,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.reactnativenotificationbadge;
 				PRODUCT_NAME = NotificationBadgeExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationBadgeExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -574,6 +622,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.reactnativenotificationbadge;
 				PRODUCT_NAME = NotificationBadgeExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationBadgeExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
