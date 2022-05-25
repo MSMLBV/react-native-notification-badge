@@ -1,5 +1,5 @@
 {
-  "name": "react-native-notification-badge",
+  "name": "@msml/react-native-notification-badge",
   "version": "0.1.0",
   "description": "Show a badge on an android phone",
   "main": "lib/commonjs/index",
@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/MeesMaas/react-native-notification-badge",
+  "repository": "https://github.com/MSMLBV/react-native-notification-badge",
   "author": "Mees Maas <meesmaas999@gmail.com> (https://github.com/MeesMaas)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MeesMaas/react-native-notification-badge/issues"
+    "url": "https://github.com/MSMLBV/react-native-notification-badge/issues"
   },
-  "homepage": "https://github.com/MeesMaas/react-native-notification-badge#readme",
+  "homepage": "https://github.com/MSMLBV/react-native-notification-badge#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
