@@ -1,11 +1,15 @@
 # react-native-notification-badge
 
-Show a badge on an android phone
+Show a badge on an android phone 
 
 ## Installation
 
 ```sh
-npm install react-native-notification-badge
+npm install @msml/react-native-notification-badge
+```
+or
+```sh
+yarn add @msml/react-native-notification-badge
 ```
 
 ## Usage
@@ -15,7 +19,8 @@ import NotificationBadge from "react-native-notification-badge";
 
 // ...
 
-const result = await NotificationBadge.multiply(3, 7);
+NotificationBadge.configure('Titel', 'There are %count% new messages');
+NotificationBadge.setNumber(0);
 ```
 
 ## Contributing

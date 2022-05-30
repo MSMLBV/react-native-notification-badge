@@ -1,6 +1,6 @@
 {
   "name": "@msml/react-native-notification-badge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Show a badge on an android phone",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
