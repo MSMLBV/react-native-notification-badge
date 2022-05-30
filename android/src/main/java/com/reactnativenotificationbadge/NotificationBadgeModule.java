@@ -66,11 +66,6 @@ public class NotificationBadgeModule extends ReactContextBaseJavaModule {
                 notificationManager.createNotificationChannel(notificationChannel);
             }
 
-            //        SharedPreferences sharedPref = context.getSharedPreferences("notification", Context.MODE_PRIVATE);
-            //        SharedPreferences.Editor editor = sharedPref.edit();
-            //        editor.putInt("COUNT", count);
-            //        editor.apply();
-
             if (count == 0) {
                 notificationManager.cancel(UNIQUE_ID);
                 return;
@@ -78,8 +73,8 @@ public class NotificationBadgeModule extends ReactContextBaseJavaModule {
 
             SharedPreferences sharedPreferences = context.getSharedPreferences(getName(), Context.MODE_PRIVATE);
 
-            String title = sharedPreferences.getString("title", null);
-            String text = sharedPreferences.getString("text", null);
+            String title = sharedPreferences.getString("title", "Notifications");
+            String text = sharedPreferences.getString("text", "You have %count% notifications");
             String processedText = text.replace("%count%", Integer.toString(count));
 
             // TODO: Use channelID from Firebase when present. Because otherwise it will fail.
@@ -92,8 +87,6 @@ public class NotificationBadgeModule extends ReactContextBaseJavaModule {
                 .build();
 
             notificationManager.notify(UNIQUE_ID, notification);
-
-//          Log.d(getName(), String.valueOf(notificationManager.getActiveNotifications()[0]));
       }
     }
 }
