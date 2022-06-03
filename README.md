@@ -1,6 +1,6 @@
 # react-native-notification-badge
 
-Show a badge on an android phone
+Show a badge on the app icon on both Android and iOS.
 
 ## Installation
 
@@ -14,7 +14,7 @@ or
 yarn add @msml/react-native-notification-badge
 ```
 
-On iOS you need to run
+Additionally on iOS you need to run:
 
 ```sh
 npx pod-install
