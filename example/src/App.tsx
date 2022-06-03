@@ -4,7 +4,7 @@ import NotificationBadge from 'react-native-notification-badge';
 
 export default function App() {
   React.useEffect(() => {
-    NotificationBadge.configure('Titel', 'There are %count% new messages');
+    NotificationBadge.configure('Title', 'There are %count% new messages');
   }, []);
 
   return (

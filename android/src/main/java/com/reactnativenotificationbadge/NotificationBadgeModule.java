@@ -5,9 +5,11 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.facebook.react.bridge.Promise;
@@ -28,6 +30,7 @@ import java.util.Map;
 public class NotificationBadgeModule extends ReactContextBaseJavaModule {
     public static final String NAME = "NotificationBadge";
     private static Integer UNIQUE_ID = 1;
+    private static String CHANNEL_ID = "count_channel";
 
     public NotificationBadgeModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -41,11 +44,14 @@ public class NotificationBadgeModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void configure(String title, String text) {
+        // Get the context.
         ReactApplicationContext context = getReactApplicationContext();
 
+        // Get the sharedPreferences and open the editor.
         SharedPreferences sharedPreferences = context.getSharedPreferences(getName(), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        // Put the variables in the editor and save it.
         editor.putString("title", title);
         editor.putString("text", text);
         editor.apply();
@@ -53,32 +59,35 @@ public class NotificationBadgeModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setNumber(int count) {
+        // Get the context.
         ReactApplicationContext context = getReactApplicationContext();
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            // Get the notification manager.
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            List < NotificationChannel > notificationChannels = notificationManager.getNotificationChannels();
 
-            if (notificationChannels.size() == 0) {
-                NotificationChannel notificationChannel = new NotificationChannel("channel", "Count", NotificationManager.IMPORTANCE_LOW);
-                notificationChannel.setShowBadge(true);
-                notificationChannel.setDescription("Used to show badges on the app icon");
-                notificationManager.createNotificationChannel(notificationChannel);
-            }
+            // Make the channel. If it already exists Android will not create another.
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "Count", NotificationManager.IMPORTANCE_LOW);
+            notificationChannel.setShowBadge(true);
+            notificationChannel.setDescription("Used to show badges on the app icon");
+            notificationManager.createNotificationChannel(notificationChannel);
 
+            // If the count is zero we will cancel the notification.
             if (count == 0) {
                 notificationManager.cancel(UNIQUE_ID);
                 return;
             }
 
+            // Open the sharedPreferences
             SharedPreferences sharedPreferences = context.getSharedPreferences(getName(), Context.MODE_PRIVATE);
 
+            // Get the title and text in case the user has configured those.
             String title = sharedPreferences.getString("title", "Notifications");
             String text = sharedPreferences.getString("text", "You have %count% notifications");
             String processedText = text.replace("%count%", Integer.toString(count));
 
-            // TODO: Use channelID from Firebase when present. Because otherwise it will fail.
-            Notification notification = new NotificationCompat.Builder(context, "channel")
+            // Make the actual notification.
+            Notification notification = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setContentTitle(title)
                 .setContentText(processedText)
                 .setNumber(count)
@@ -86,7 +95,9 @@ public class NotificationBadgeModule extends ReactContextBaseJavaModule {
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
                 .build();
 
+            // Send the notification.
             notificationManager.notify(UNIQUE_ID, notification);
       }
     }
+
 }
