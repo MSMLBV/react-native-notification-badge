@@ -1,7 +1,7 @@
 {
   "name": "@msml/react-native-notification-badge",
-  "version": "0.1.3",
-  "description": "Show a badge on an android phone",
+  "version": "0.1.5",
+  "description": "Show a badge on the app icon on both Android and iOS.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",

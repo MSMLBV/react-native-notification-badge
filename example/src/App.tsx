@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
-import NotificationBadge from 'react-native-notification-badge';
+// @ts-ignore
+import NotificationBadge from '@msml/react-native-notification-badge';
 
 export default function App() {
-  React.useEffect(() => {
+  useEffect(() => {
     NotificationBadge.configure('Title', 'There are %count% new messages');
   }, []);
 

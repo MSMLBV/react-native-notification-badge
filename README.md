@@ -28,7 +28,7 @@ import NotificationBadge from '@msml/react-native-notification-badge';
 
 ### Configure (android only)
 
-You can confire the title and text that will be displayed on the notification block. `%count%` will be replaced with the actual notifications open.
+You can configure the title and text that will be displayed on the notification block. `%count%` will be replaced with the actual notifications open.
 
 ```js
 NotificationBadge.configure('Title', 'There are %count% new messages');
@@ -36,7 +36,7 @@ NotificationBadge.configure('Title', 'There are %count% new messages');
 
 ### Set Number
 
-Update the value of the badge.
+Update the value of the badge. When set to 0 the badge will disappear.
 
 ```js
 NotificationBadge.setNumber(12);
