@@ -23,7 +23,7 @@ npx pod-install
 ## Usage
 
 ```js
-import NotificationBadge from 'react-native-notification-badge';
+import NotificationBadge from '@msml/react-native-notification-badge';
 ```
 
 ### Configure (android only)
